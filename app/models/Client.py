@@ -1,15 +1,18 @@
 
 class Client:
     _FIELDS_MAPPING = {
+        'client_id': int,
         'nick_name': str,
         'first_name': str,
         'last_name': str,
+        'middle_name': str,
         'gender': str,
         'birth_date': str,
         'email': str,
         'phone': str,
         'address': str,
-        'bonus': int
+        'city_id': int,
+        'district_id': int
     }
 
     def __init__(self, client_id, nick_name, first_name, last_name, middle_name, gender, birth_date, email, phone, address, city_id, district_id):
@@ -39,8 +42,8 @@ class Client:
             "birth_date": '1951-03-09',
             "email": 'golubinaya@pochta.ru',
             "phone": '+84333777742',
-            "city_id": 23,
             "address": 'Республики 145',
+            "city_id": 23,
             "district_id": 445
         }
 
