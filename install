@@ -6,7 +6,7 @@ function INSTALL_LINUX() {
 }
 
 function INSTALL_MAC() {
-  brew install pip python3 virtualenv
+  brew install pip3 python3 virtualenv
 }
 
 ### create env
