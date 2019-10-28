@@ -1,0 +1,33 @@
+#!/bin/bash
+
+
+function INSTALL_LINUX() {
+  ### install os package
+  apt install pip python3 virtualenv
+}
+
+function INSTALL_MAC() {
+  ### install os package
+  brew install pip python3 virtualenv
+}
+
+function CREATE_ENV() {
+  ### create env
+  python3 -m venv
+}
+
+function INSTALL_REQUIREMENT() {
+  ### install requirements
+  pip install -r requirements.txt
+}
+
+
+if [[ ${1} = 'mac' ]]; then
+  INSTALL_MAC
+  CREATE_ENV
+  INSTALL_REQUIREMENT
+else
+  INSTALL_LINUX
+  CREATE_ENV
+  INSTALL_REQUIREMENT
+fi
