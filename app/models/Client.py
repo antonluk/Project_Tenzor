@@ -15,7 +15,8 @@ class Client:
         'district_id': int
     }
 
-    def __init__(self, client_id, nick_name, first_name, last_name, middle_name, gender, birth_date, email, phone, address, city_id, district_id):
+    def __init__(self, client_id, nick_name, first_name, last_name, middle_name, gender, birth_date, email, phone,
+                 address, city_id, district_id):
         self.client_id = client_id
         self.nick_name = nick_name
         self.first_name = first_name
