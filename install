@@ -11,7 +11,7 @@ function INSTALL_MAC() {
 
 ### create env
 function CREATE_ENV() {
-  virtualenv venv
+  virtualenv -p python3 venv
 }
 
 ### install requirements
@@ -23,12 +23,18 @@ function INSTALL_REQUIREMENT_MAC() {
   pip3 install -r requirements.txt
 }
 
+function LAUNCH_VENV() {
+  source venv/bin/activate
+}
+
 if [[ ${1} = 'mac' ]]; then
   INSTALL_MAC
   CREATE_ENV
+  LAUNCH_VENV
   INSTALL_REQUIREMENT_MAC
 else
   INSTALL_LINUX
   CREATE_ENV
+  LAUNCH_VENV
   INSTALL_REQUIREMENT
 fi
