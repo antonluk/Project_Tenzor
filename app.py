@@ -107,6 +107,7 @@ def client_update(client_id):
         update_client.city_id = request.form['city_id']
     if 'district_id' in request.form:
         update_client.district_id = request.form['district_id']
+    db.session.commit()
     return redirect('/')
 
 
