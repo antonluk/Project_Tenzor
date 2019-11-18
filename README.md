@@ -15,6 +15,9 @@
 
 Клиент - просмотр каталога, покупка товара, получение(подтверждение), обратная связь с модераторами.
 
+# Описание сущностей и общей концепции проекта
+https://drive.google.com/open?id=1D5UY0mMDJqL8HcFi7FbWLEDBMKkMWVtS
+
 
 # Install
 ```
@@ -35,7 +38,6 @@ python3 run.py
 https://flask-appbuilder.readthedocs.io/en/latest/index.html
 
 # Roadmap
-
 12.11-14.11 - Модели и CRUD по сущностям
 
 15.11-17.11 - Регистрация
@@ -48,10 +50,11 @@ https://flask-appbuilder.readthedocs.io/en/latest/index.html
 
 22.11 - Корзина
 
-25.11 - Очередь заказаов
+25.11 - Очередь заказов
 
 28.11 - Оплата товаров
 
 реализация проекта...
 
 когда-то - deadline
+
