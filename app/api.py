@@ -5,7 +5,7 @@ from flask_appbuilder.models.sqla.interface import SQLAInterface
 
 
 from . import appbuilder
-from .models import Contact, ContactGroup, Gender, Product
+from .models import Contact, ContactGroup, Gender, Product, Seller, Courier, Order, Cart
 
 
 greeting_schema = {"type": "object", "properties": {"name": {"type": "string"}}}
@@ -36,6 +36,42 @@ class ProductModelApi(ModelRestApi):
 
 
 appbuilder.add_api(ProductModelApi)
+
+
+class SellerModelApi(ModelRestApi):
+    resource_name = 'seller'
+    datamodel = SQLAInterface(Seller)
+    allow_browser_login = True
+
+
+appbuilder.add_api(SellerModelApi)
+
+
+class CourierModelApi(ModelRestApi):
+    resource_name = 'courier'
+    datamodel = SQLAInterface(Courier)
+    allow_browser_login = True
+
+
+appbuilder.add_api(CourierModelApi)
+
+
+class OrderModelApi(ModelRestApi):
+    resource_name = 'order'
+    datamodel = SQLAInterface(Order)
+    allow_browser_login = True
+
+
+appbuilder.add_api(OrderModelApi)
+
+
+class CartModelApi(ModelRestApi):
+    resource_name = 'cart'
+    datamodel = SQLAInterface(Cart)
+    allow_browser_login = True
+
+
+appbuilder.add_api(CartModelApi)
 
 
 # class Client(BaseApi):

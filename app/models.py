@@ -51,7 +51,33 @@ class Product(Model):
     id = Column(Integer, primary_key=True)
     name = Column(String(150), unique=True, nullable=False)
     price = Column(Integer, nullable=False)
-    # type =
-    # category =
-    # description =
-    # photo =
+    id_seller = Column(Integer, primary_key=True)
+    category = Column(String(50), nullable=False)
+    number = Column(Integer, nullable=False)
+
+
+class Seller(Model):
+    id = Column(Integer, primary_key=True)
+    address = Column(String(500), nullable=False)
+    inn = Column(Integer, unique=True, nullable=False)
+    ogrn = Column(Integer, unique=True, nullable=False)
+
+
+class Courier(Model):
+    id = Column(Integer, primary_key=True)
+    passport_data = Column(String(250), nullable=False)
+
+
+class Order(Model):
+    id = Column(Integer, primary_key=True)
+    id_list_products = Column(Integer, primary_key=True)
+    id_seller = Column(Integer, primary_key=True)
+    state = Column(String, nullable=False)
+
+    # def hash(self):
+
+
+class Cart(Model):
+    id_list_products = Column(Integer, primary_key=True)
+
+    # def IsOrdered(self):
