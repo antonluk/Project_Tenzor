@@ -16,3 +16,16 @@
 Клиент - просмотр каталога, покупка товара, получение(подтверждение), обратная связь с модераторами.
 
 ![Image of plan](https://github.com/AntonLuk/Project_Tenzor/blob/master/plan.png)
+
+
+# install
+```
+python3 -m venv env
+
+source env/bin/activate
+
+pip install -r requirements.txt
+
+
+```
+
