@@ -15,6 +15,25 @@
 
 Клиент - просмотр каталога, покупка товара, получение(подтверждение), обратная связь с модераторами.
 
+
+# Install
+```
+$ python3 -m venv env
+
+$ source env/bin/activate
+
+$ pip install -r requirements.txt
+
+```
+
+# Run
+```
+python3 run.py
+```
+
+# Official documentation
+https://flask-appbuilder.readthedocs.io/en/latest/index.html
+
 # Roadmap
 
 12.11-14.11 - Модели и CRUD по сущностям
