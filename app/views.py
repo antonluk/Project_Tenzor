@@ -6,7 +6,7 @@ from flask_appbuilder.models.group import aggregate_count
 from flask_appbuilder.models.sqla.interface import SQLAInterface
 
 from . import appbuilder, db
-from .models import Contact, ContactGroup, Gender, Product
+from .models import Contact, ContactGroup, Gender, Product, Seller
 
 
 def fill_gender():
@@ -109,20 +109,43 @@ class ContactTimeChartView(GroupByChartView):
 class ProductModelView(ModelView):
     datamodel = SQLAInterface(Product)
 
-    list_columns = ["name", "price"]
+    list_columns = ["name", "price", "category", "count"]
 
     base_order = ("name", "price")
 
     show_fieldsets = [
-        ("Summary", {"fields": ["name", "price"]})
+        ("Summary", {"fields": ["name", "price", "category", "count"]})  # id_seller
     ]
 
     add_fieldsets = [
-        ("Summary", {"fields": ["name", "price"]})
+        ("Summary", {"fields": ["name", "price", "category", "count"]})  # id_seller
     ]
 
     edit_fieldsets = [
-        ("Summary", {"fields": ["name", "price"]})
+        ("Summary", {"fields": ["name", "price", "category", "count"]})  # id_seller
+    ]
+
+
+class SellerModelView(ModelView):
+    datamodel = SQLAInterface(Seller)
+
+    list_columns = [
+        "name",
+        "address",
+        "inn",
+        "ogrn"
+    ]
+
+    show_fieldsets = [
+        ("Summary", {"fields": ["name", "address", "inn", "ogrn"]})
+    ]
+
+    add_fieldsets = [
+        ("Summary", {"fields": ["name", "address", "inn", "ogrn"]})
+    ]
+
+    edit_fieldsets = [
+        ("Summary", {"fields": ["name", "address", "inn", "ogrn"]})
     ]
 
 
@@ -143,4 +166,8 @@ appbuilder.add_view(
 # appbuilder.add_separator("Products")
 appbuilder.add_view(
     ProductModelView, "Product", icon="", category="Products",
+)
+
+appbuilder.add_view(
+    SellerModelView, "Seller", icon="", category="Seller",
 )
